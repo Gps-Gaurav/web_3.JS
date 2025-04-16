@@ -7,4 +7,10 @@ async function getBalance() {
      const balance = await web3.eth.getBalance('0xf4783E9620fA022b874900D0C833112A30Df5b3f');
 
      getBalance();
+     let balanceInEth = web3.utils.fromWei(balance, 'ether');
+     console.log(`Balance: ${balanceInEth} ETH`);
+     return balanceInEth;
+     let balanceInWei = web3.utils.toWei(balance, 'ether');
+     console.log(`Balance: ${balanceInWei} Wei`);
+     return balanceInWei;
 }
